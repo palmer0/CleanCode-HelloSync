@@ -138,7 +138,6 @@ public class HelloActivityLandscapeTest {
     mActivityTestRule.getActivity()
         .setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-
     // THEN
     ViewInteraction textView9 = onView(
         allOf(withId(R.id.helloMessage), withText("Hello World!"), isDisplayed()));
