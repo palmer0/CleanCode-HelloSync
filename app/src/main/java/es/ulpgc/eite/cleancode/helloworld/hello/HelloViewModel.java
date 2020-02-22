@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class HelloViewModel  {
 
-  public String helloMessage = "";
+  public String helloMessage = "?";
 
   @Override
   public boolean equals(Object obj) {

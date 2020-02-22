@@ -64,7 +64,7 @@ public class ByePresenter implements ByeContract.Presenter {
   public void sayByeButtonClicked() {
     Log.e(TAG, "sayByeButtonClicked()");
 
-    state.byeMessage = "";
+    state.byeMessage = "?";
 
     view.get().displayByeData(state);
 

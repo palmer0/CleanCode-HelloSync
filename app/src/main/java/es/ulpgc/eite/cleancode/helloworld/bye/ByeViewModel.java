@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ByeViewModel  {
 
-  public String byeMessage = "";
+  public String byeMessage = "?";
 
   @Override
   public boolean equals(Object obj) {
