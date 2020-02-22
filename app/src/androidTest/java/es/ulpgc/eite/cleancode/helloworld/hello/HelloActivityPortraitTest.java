@@ -157,7 +157,7 @@ public class HelloActivityPortraitTest {
         allOf(withId(R.id.goHelloButton), withText("Go Hello"), isDisplayed()));
     appCompatButton10.perform(click());
 
-    // THEN & GIVEN
+    // THEN
     ViewInteraction textView10 = onView(
         allOf(withId(R.id.helloMessage), withText("Bye World!"),isDisplayed()));
     textView10.check(matches(withText("Bye World!")));
