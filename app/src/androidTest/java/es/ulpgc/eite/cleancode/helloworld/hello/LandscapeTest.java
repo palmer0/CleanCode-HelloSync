@@ -24,7 +24,7 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class HelloActivityLandscapeTest {
+public class LandscapeTest {
 
   @Rule
   public ActivityTestRule<HelloActivity> mActivityTestRule =

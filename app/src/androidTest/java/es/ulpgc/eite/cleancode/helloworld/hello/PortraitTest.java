@@ -23,7 +23,7 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class HelloActivityPortraitTest {
+public class PortraitTest {
 
   @Rule
   public ActivityTestRule<HelloActivity> mActivityTestRule =
