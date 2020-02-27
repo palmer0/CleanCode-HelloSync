@@ -25,6 +25,7 @@ import static org.hamcrest.Matchers.allOf;
 @RunWith(AndroidJUnit4.class)
 public class PortraitTest {
 
+
   @Rule
   public ActivityTestRule<HelloActivity> mActivityTestRule =
       new ActivityTestRule<>(HelloActivity.class);
