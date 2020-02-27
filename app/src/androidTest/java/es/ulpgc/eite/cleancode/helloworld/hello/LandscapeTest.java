@@ -31,7 +31,7 @@ public class LandscapeTest {
       new ActivityTestRule<>(HelloActivity.class);
 
   @Test
-  public void helloActivityLandscapeTest() {
+  public void instrumentedTest() {
 
     // GIVEN
     ViewInteraction textView0 = onView(

@@ -30,7 +30,7 @@ public class PortraitTest {
       new ActivityTestRule<>(HelloActivity.class);
 
   @Test
-  public void helloActivityPortraitTest() {
+  public void instrumentedTest() {
 
     // GIVEN
     ViewInteraction textView = onView(
