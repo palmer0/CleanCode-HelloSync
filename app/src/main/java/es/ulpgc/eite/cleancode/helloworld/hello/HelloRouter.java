@@ -36,12 +36,12 @@ public class HelloRouter implements HelloContract.Router {
     }
   }
 
-  @Override
-  public void navigateToByeScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, ByeActivity.class);
-    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    context.startActivity(intent);
-  }
+//  @Override
+//  public void navigateToByeScreen() {
+//    Context context = mediator.getApplicationContext();
+//    Intent intent = new Intent(context, ByeActivity.class);
+//    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//    context.startActivity(intent);
+//  }
 
 }

@@ -11,6 +11,7 @@ public interface HelloContract {
     void injectPresenter(Presenter presenter);
 
     void displayHelloData(HelloViewModel viewModel);
+    void navigateToByeScreen();
   }
 
   interface Presenter {
@@ -32,6 +33,6 @@ public interface HelloContract {
 
     ByeToHelloState getDataFromByeScreen();
     void passDataToByeScreen(HelloToByeState state);
-    void navigateToByeScreen();
+    //void navigateToByeScreen();
   }
 }
