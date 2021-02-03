@@ -98,7 +98,7 @@ Feature: Hello World
 
   Encontrandonos en pantalla Hello sin mostrar mensaje
   pasar a pantalla Bye sin mostrar mensaje
-  y hacer que se muestre mensaje Bye
+  y hacer que muestre mensaje Bye
 
     Given iniciar pantalla Hello
     And ocultar mensaje en pantalla Hello
@@ -118,7 +118,7 @@ Feature: Hello World
 
   Encontrandonos en pantalla Hello mostrando mensaje Hello
   pasar a pantalla Bye mostrando mensaje Hello
-  y hacer que se muestre mensaje Bye
+  y hacer que muestre mensaje Bye
 
     Given iniciar pantalla Hello
     And ocultar mensaje en pantalla Hello
@@ -128,7 +128,6 @@ Feature: Hello World
     #And mostrar botones SayHello y GoBye activados
     And pulsar boton GoBye
     And iniciar pantalla Bye
-    ##And ocultar mensaje en pantalla Bye
     And mostrar mensaje HelloWorld en pantalla Bye
     #And mostrar botones SayBye y GoHello activados
     When pulsar boton SayBye
@@ -145,18 +144,13 @@ Feature: Hello World
   hacer que se muestre mensaje Bye
   y volver a pantalla Hello mostrando mensaje Bye
 
-
     Given iniciar pantalla Hello
     And ocultar mensaje en pantalla Hello
     #And mostrar botones SayHello y GoBye activados
     And pulsar boton GoBye
     And iniciar pantalla Bye
-    ##And mostrar mensaje ByeWorld en pantalla Bye
     And ocultar mensaje en pantalla Bye
     #And mostrar botones SayBye y GoHello activados
-    ##And pulsar boton SayBye
-    ##And mostrar mensaje ByeWorld en pantalla Bye
-    ##And mostrar botones SayBye y GoHello activados
     And pulsar boton SayBye
     And mostrar mensaje ByeWorld en pantalla Bye
     #And mostrar botones SayBye y GoHello activados
@@ -178,14 +172,11 @@ Feature: Hello World
     Given iniciar pantalla Hello
     And ocultar mensaje en pantalla Hello
     #And mostrar botones SayHello y GoBye activados
-    ##And pulsar boton SayHello
-    ##And mostrar mensaje HelloWorld en pantalla Hello
     #And mostrar botones SayHello y GoBye activados
     And pulsar boton GoBye
     And iniciar pantalla Bye
     And ocultar mensaje en pantalla Bye
     #And mostrar botones SayBye y GoHello activados
-    ##And pulsar boton SayBye
     And pulsar boton SayBye
     And mostrar mensaje ByeWorld en pantalla Bye
     #And mostrar botones SayBye y GoHello activados
@@ -240,8 +231,6 @@ Feature: Hello World
     #And mostrar botones SayHello y GoBye activados
     And pulsar boton GoBye
     And iniciar pantalla Bye
-    ##And mostrar mensaje HelloWorld en pantalla Bye
-    ##And pulsar boton SayBye
     And mostrar mensaje HelloWorld en pantalla Bye
     #And mostrar botones SayBye y GoHello activados
     And pulsar boton SayBye
@@ -261,7 +250,7 @@ Feature: Hello World
   pasar a pantalla Bye sin mostrar mensaje
   hacer que se muestre mensaje Bye
   volver a pantalla Hello mostrando mensaje Bye
-  y hacer que se muestre mensaje Hello
+  y hacer que muestre mensaje Hello
 
     Given iniciar pantalla Hello
     And ocultar mensaje en pantalla Hello
@@ -290,7 +279,7 @@ Feature: Hello World
   pasar a pantalla Bye mostrando mensaje Hello
   hacer que se muestre mensaje Bye
   volver a pantalla Hello mostrando mensaje Bye
-  y hacer que se muestre mensaje Hello
+  y hacer que muestre mensaje Hello
 
     Given iniciar pantalla Hello
     And ocultar mensaje en pantalla Hello
