@@ -1,4 +1,4 @@
-package es.ulpgc.eite.cleancode.helloworld.hello;
+package es.ulpgc.eite.cleancode.helloworld;
 
 
 import androidx.test.espresso.ViewInteraction;
@@ -11,7 +11,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import es.ulpgc.eite.cleancode.helloworld.R;
+import es.ulpgc.eite.cleancode.helloworld.hello.HelloActivity;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -20,6 +20,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 
+@SuppressWarnings("ALL")
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class LandscapeTest {

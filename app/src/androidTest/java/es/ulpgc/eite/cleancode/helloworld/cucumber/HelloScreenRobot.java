@@ -1,4 +1,4 @@
-package es.ulpgc.eite.cleancode.helloworld.hello.cucumber;
+package es.ulpgc.eite.cleancode.helloworld.cucumber;
 
 import androidx.test.rule.ActivityTestRule;
 
@@ -13,6 +13,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.isEnabled;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+@SuppressWarnings("ALL")
 public class HelloScreenRobot {
 
     private ActivityTestRule<HelloActivity> testRule = new ActivityTestRule<>(

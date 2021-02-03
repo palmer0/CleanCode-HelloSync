@@ -1,4 +1,4 @@
-package es.ulpgc.eite.cleancode.helloworld.hello.test;
+package es.ulpgc.eite.cleancode.helloworld.test;
 
 import android.os.Bundle;
 

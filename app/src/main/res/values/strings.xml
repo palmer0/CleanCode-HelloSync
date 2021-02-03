@@ -5,6 +5,7 @@
     <string name="go_bye_button_label">Go Bye</string>
     <string name="hello_message">Hello World!</string>
 
+    <string name="empty_text">\?</string>
 
     <string name="say_bye_button_label">Say Bye</string>
     <string name="go_hello_button_label">Go Hello</string>

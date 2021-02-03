@@ -1,4 +1,4 @@
-package es.ulpgc.eite.cleancode.helloworld.hello.cucumber;
+package es.ulpgc.eite.cleancode.helloworld.cucumber;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;

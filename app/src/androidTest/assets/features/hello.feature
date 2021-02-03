@@ -1,103 +1,317 @@
 Feature: Hello World
 
-  Scenario: Encontrandonos en Hello mostramos mensaje Hello
+  @hello-feature
+  Scenario: Mostrar Hello en Hello
 
-    Given encontrandonos en pantalla Hello
-    And ocultaremos mensaje de pantalla
-    And mostraremos botones Say Hello y Go Bye activados
-    When al pulsar boton Say Hello
-    Then mostramos mensaje de pantalla Hello World
-    And mostramos botones Say Hello y Go Bye activados
+  Encontrandonos en pantalla Hello sin mostrar mensaje
+  hacer que se muestre mensaje Hello
 
-
-  Scenario: Pasar a Bye sin mostrar mensaje en Hello y Bye
-
-    Given  encontrandonos en pantalla Hello
-    And ocultaremos mensaje de pantalla
-    And mostraremos botones Say Hello y Go Bye activados
-    When al pulsar boton Go Bye
-    Then iniciamos pantalla Bye
-    And ocultamos mensaje de pantalla
-    And mostramos botones Say Bye y Go Hello activados
-
-  Scenario: Pasar a Bye mostrando mensaje Hello en Hello y Bye
-
-    Given  encontrandonos en pantalla Hello
-    And mostraremos mensaje de pantalla Hello World
-    And mostraremos botones Say Hello y Go Bye activados
-    When al pulsar boton Go Bye
-    Then iniciamos pantalla Bye
-    And mostramos mensaje de pantalla Hello World
-    And mostramos botones Say Bye y Go Hello activados
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    When pulsar boton SayHello
+    Then mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
 
 
-  Scenario: Encontrandonos en Bye retornar a Hello sin mostrar mensaje en Hello y Bye
+  @hello-feature
+  Scenario: Ir a Bye sin mostrar
 
-    Given encontrandonos en pantalla Bye
-    And ocultaremos mensaje de pantalla
-    And mostraremos botones Say Bye y Go Hello activados
-    When al pulsar botones Go Hello o Back
-    Then finalizamos pantalla Bye
-    And resumimos pantalla Hello
-    And ocultamos mensaje de pantalla
-    And mostramos botones Say Hello y Go Bye activados
+  Encontrandonos en pantalla Hello sin mostrar mensaje
+  pasar a pantalla Bye sin mostrar mensaje
 
-  Scenario: Pasar a Bye mostrando mensaje Hello en Hello y retornar a Hello sin mostrar mensaje en Bye y Hello
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    When pulsar boton GoBye
+    Then iniciar pantalla Bye
+    And ocultar mensaje en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton Back
 
-    Given encontrandonos en pantalla Bye mientras mostramos mensaje Hello World en pantalla Hello
-    And ocultaremos mensaje de pantalla
-    And mostraremos botones Say Bye y Go Hello activados
-    When al pulsar botones Go Hello
-    Then finalizamos pantalla Bye
-    And resumimos pantalla Hello
-    And ocultamos mensaje de pantalla
-    And mostramos botones Say Hello y Go Bye activados
 
-  Scenario: Mostrando mensaje de Bye en Bye volver a Hello mostrando mensaje Hello
+  @hello-feature
+  Scenario: Ir a Bye mostrando Hello
 
-    Given encontrandonos en pantalla Bye
-    And mostraremos mensaje de pantalla Bye World
-    And mostraremos botones Say Bye y Go Hello activados
-    When al pulsar boton  Back
-    Then finalizamos pantalla Bye
-    And resumimos pantalla Hello
-    And mostramos mensaje de pantalla Hello World
-    And mostramos botones Say Hello y Go Bye activados
+  Encontrandonos en pantalla Hello mostrando mensaje Hello
+  pasar a pantalla Bye mostrando mensaje Hello
 
-  Scenario: Mostrando mensaje de Bye en Bye retornar a Hello mostrando mensaje Bye
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton SayHello
+    And mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    When pulsar boton GoBye
+    Then iniciar pantalla Bye
+    And mostrar mensaje HelloWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton Back
 
-    Given encontrandonos en pantalla Bye
-    And mostraremos mensaje de pantalla Bye World
-    And mostraremos botones Say Bye y Go Hello activados
-    When al pulsar boton Go Hello
-    Then finalizamos pantalla Bye
-    And resumimos pantalla Hello
-    And mostramos mensaje de pantalla Bye World
-    And mostramos botones Say Hello y Go Bye activados
 
-  Scenario: Encontrandonos en Bye mostramos mensaje Bye
+  @hello-feature
+  Scenario: Volver a Hello sin mostrar desde Bye sin mostrar
 
-    Given encontrandonos en pantalla Bye
-    And ocultaremos mensaje de pantalla
-    And mostraremos botones Say Bye y Go Hello activados
-    When al pulsar boton Say Bye
-    Then mostramos mensaje de pantalla Bye World
-    And mostramos botones Say Bye y Go Hello activados
+  Encontrandonos en pantalla Hello sin mostrar mensaje
+  pasar a pantalla Bye sin mostrar mensaje
+  y volver a pantalla Hello sin mostrar mensaje
 
-  Scenario: Encontrandonos en Bye mostrando Hello mostramos mensaje Bye
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    And ocultar mensaje en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    #When pulsar botones GoHello o Back
+    When pulsar boton GoHello
+    Then finalizar pantalla Bye
+    And resumir pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
 
-    Given encontrandonos en pantalla Bye
-    And mostraremos mensaje de pantalla Hello World
-    And mostraremos botones Say Bye y Go Hello activados
-    When al pulsar boton Say Bye
-    Then mostramos mensaje de pantalla Bye World
-    And mostramos botones Say Bye y Go Hello activados
 
-  Scenario: Encontrandonos en Hello mostrando Bye mostramos mensaje Hello
+  @hello-feature
+  Scenario: Retornar a Hello sin mostrar desde Bye sin mostrar
 
-    Given encontrandonos en pantalla Hello
-    And mostraremos mensaje de pantalla Bye World
-    And mostraremos botones Say Hello y Go Bye activados
-    When al pulsar boton Say Hello
-    Then mostramos mensaje de pantalla Hello World
-    And mostramos botones Say Hello y Go Bye activados
+  Encontrandonos en pantalla Hello sin mostrar mensaje
+  pasar a pantalla Bye sin mostrar mensaje
+  y retornar a pantalla Hello sin mostrar mensaje
+
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    And ocultar mensaje en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    #When pulsar botones GoHello o Back
+    When pulsar boton Back
+    Then finalizar pantalla Bye
+    And resumir pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+
+
+  @hello-feature
+  Scenario: Ir a Bye sin mostrar y mostrar Bye
+
+  Encontrandonos en pantalla Hello sin mostrar mensaje
+  pasar a pantalla Bye sin mostrar mensaje
+  y hacer que se muestre mensaje Bye
+
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    And ocultar mensaje en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    When pulsar boton SayBye
+    Then mostrar mensaje ByeWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton Back
+
+
+  @hello-feature
+  Scenario: Ir a Bye mostrando Hello y mostrar Bye
+
+  Encontrandonos en pantalla Hello mostrando mensaje Hello
+  pasar a pantalla Bye mostrando mensaje Hello
+  y hacer que se muestre mensaje Bye
+
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton SayHello
+    And mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    ##And ocultar mensaje en pantalla Bye
+    And mostrar mensaje HelloWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    When pulsar boton SayBye
+    Then mostrar mensaje ByeWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton Back
+
+
+  @hello-feature
+  Scenario: Volver a Hello mostrando Bye desde Bye sin mostrar
+
+  Encontrandonos en pantalla Hello sin mostrar mensaje
+  pasar a pantalla Bye sin mostrar mensaje
+  hacer que se muestre mensaje Bye
+  y volver a pantalla Hello mostrando mensaje Bye
+
+
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    ##And mostrar mensaje ByeWorld en pantalla Bye
+    And ocultar mensaje en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    ##And pulsar boton SayBye
+    ##And mostrar mensaje ByeWorld en pantalla Bye
+    ##And mostrar botones SayBye y GoHello activados
+    And pulsar boton SayBye
+    And mostrar mensaje ByeWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    When pulsar boton GoHello
+    Then finalizar pantalla Bye
+    And resumir pantalla Hello
+    And mostrar mensaje ByeWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+
+
+  @hello-feature
+  Scenario: Volver a Hello desde Bye sin mostrar
+
+  Encontrandonos en pantalla Hello sin mostrar mensaje
+  pasar a pantalla Bye sin mostrar mensaje
+  hacer que se muestre mensaje Bye
+  y retornar a pantalla Hello sin mostrar mensaje
+
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    ##And pulsar boton SayHello
+    ##And mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    And ocultar mensaje en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    ##And pulsar boton SayBye
+    And pulsar boton SayBye
+    And mostrar mensaje ByeWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    When pulsar boton Back
+    Then finalizar pantalla Bye
+    And resumir pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+
+
+  @hello-feature
+  Scenario: Retornar a Hello desde Bye mostrando Hello
+
+  Encontrandonos en pantalla Hello mostrando mensaje Hello
+  pasar a pantalla Bye mostrando mensaje Hello
+  hacer que se muestre mensaje Bye
+  y retornar a pantalla Hello mostrando mensaje Hello
+
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton SayHello
+    And mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    And mostrar mensaje HelloWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton SayBye
+    And mostrar mensaje ByeWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    When pulsar boton Back
+    Then finalizar pantalla Bye
+    And resumir pantalla Hello
+    And mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+
+
+  @hello-feature
+  Scenario: Volver a Hello mostrando Bye desde Bye mostrando Hello
+
+  Encontrandonos en pantalla Hello mostrando mensaje Hello
+  pasar a pantalla Bye mostrando mensaje Hello
+  hacer que se muestre mensaje Bye
+  y retornar a pantalla Hello mostrando mensaje Bye
+
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton SayHello
+    And mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    ##And mostrar mensaje HelloWorld en pantalla Bye
+    ##And pulsar boton SayBye
+    And mostrar mensaje HelloWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton SayBye
+    And mostrar mensaje ByeWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    When pulsar boton GoHello
+    Then finalizar pantalla Bye
+    And resumir pantalla Hello
+    And mostrar mensaje ByeWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+
+
+  @hello-feature
+  Scenario: Volver a Hello mostrando Bye desde Bye sin mostrar y mostrar Hello
+
+  Encontrandonos en pantalla Hello sin mostrar mensaje
+  pasar a pantalla Bye sin mostrar mensaje
+  hacer que se muestre mensaje Bye
+  volver a pantalla Hello mostrando mensaje Bye
+  y hacer que se muestre mensaje Hello
+
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    And ocultar mensaje en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton SayBye
+    And mostrar mensaje ByeWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton GoHello
+    And finalizar pantalla Bye
+    And resumir pantalla Hello
+    And mostrar mensaje ByeWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    When pulsar boton SayHello
+    Then mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+
+
+  @hello-feature
+  Scenario: Volver a Hello mostrando Bye desde Bye mostrando Hello y mostrar Hello
+
+  Encontrandonos en pantalla Hello mostrando mensaje Hello
+  pasar a pantalla Bye mostrando mensaje Hello
+  hacer que se muestre mensaje Bye
+  volver a pantalla Hello mostrando mensaje Bye
+  y hacer que se muestre mensaje Hello
+
+    Given iniciar pantalla Hello
+    And ocultar mensaje en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton SayHello
+    And mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    And pulsar boton GoBye
+    And iniciar pantalla Bye
+    And mostrar mensaje HelloWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton SayBye
+    And mostrar mensaje ByeWorld en pantalla Bye
+    #And mostrar botones SayBye y GoHello activados
+    And pulsar boton GoHello
+    And finalizar pantalla Bye
+    And resumir pantalla Hello
+    And mostrar mensaje ByeWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+    When pulsar boton SayHello
+    Then mostrar mensaje HelloWorld en pantalla Hello
+    #And mostrar botones SayHello y GoBye activados
+
+
