@@ -15,7 +15,6 @@ public interface ByeContract {
   interface Presenter {
     void injectView(WeakReference<View> view);
     void injectModel(Model model);
-    //void injectRouter(Router router);
 
     void onResumeCalled();
     void sayByeButtonClicked();
@@ -26,13 +25,5 @@ public interface ByeContract {
 
     String getByeMessage();
   }
-
-  /*
-  interface Router {
-
-    void passDataToHelloScreen(ByeToHelloState state);
-    HelloToByeState getDataFromHelloScreen();
-  }
-  */
 
 }
