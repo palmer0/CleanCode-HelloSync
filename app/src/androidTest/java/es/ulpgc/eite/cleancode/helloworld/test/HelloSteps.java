@@ -2,8 +2,11 @@ package es.ulpgc.eite.cleancode.helloworld.test;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.os.RemoteException;
 
 import androidx.test.rule.ActivityTestRule;
+import androidx.test.uiautomator.UiDevice;
 
 import org.junit.Rule;
 
@@ -23,6 +26,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 
 @SuppressWarnings("ALL")
 public class HelloSteps {
@@ -37,12 +41,30 @@ public class HelloSteps {
 
   @Before("@hello-feature")
   public void setUp() {
+
+    try {
+
+      UiDevice device = UiDevice.getInstance(getInstrumentation());
+      device.setOrientationNatural();
+
+    } catch (RemoteException e) {
+    }
+
     testRule.launchActivity(new Intent());
     activity = testRule.getActivity();
   }
 
   @After("@hello-feature")
   public void tearDown() {
+
+    try {
+
+      UiDevice device = UiDevice.getInstance(getInstrumentation());
+      device.setOrientationNatural();
+
+    } catch (RemoteException e) {
+    }
+
     testRule.finishActivity();
   }
 
@@ -103,6 +125,13 @@ public class HelloSteps {
   @Then("^iniciar pantalla Bye$")
   public void iniciarPantallaBye() {
 
+    /*
+    try {
+      Thread.sleep(100);
+    } catch (InterruptedException e) {
+
+    }
+    */
   }
 
   @And("^ocultar mensaje en pantalla Bye$")
@@ -124,6 +153,12 @@ public class HelloSteps {
 
   @Then("^finalizar pantalla Bye$")
   public void finalizarPantallaBye() {
+
+    try {
+      Thread.sleep(100);
+    } catch (InterruptedException e) {
+
+    }
   }
 
   @And("^resumir pantalla Hello$")
@@ -139,6 +174,13 @@ public class HelloSteps {
 
   @Then("^mostrar mensaje ByeWorld en pantalla Bye$")
   public void mostrarMensajeByeWorldEnPantallaBye() {
+
+    try {
+      Thread.sleep(100);
+    } catch (InterruptedException e) {
+
+    }
+
     onView(withId(R.id.byeMessage)).check(matches(isDisplayed()));
     onView(withId(R.id.byeMessage))
         .check(matches(withText(activity.getString(R.string.bye_message))));
@@ -169,4 +211,40 @@ public class HelloSteps {
     pressBack();
   }
 
+
+  @When("^girar pantalla$")
+  public void girarPantalla() {
+
+    int orientation = activity.getRequestedOrientation();
+
+    if(orientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+      orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+
+    } else {
+      orientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+    }
+
+    activity.setRequestedOrientation(orientation);
+
+    try {
+      UiDevice device = UiDevice.getInstance(getInstrumentation());
+
+      if(orientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+        device.setOrientationNatural();
+
+      } else {
+        device.setOrientationLeft();
+      }
+
+    } catch (RemoteException e) {
+    }
+
+    /*
+    try {
+      Thread.sleep(100);
+    } catch (InterruptedException e) {
+
+    }
+    */
+  }
 }
