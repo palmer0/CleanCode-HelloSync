@@ -2,7 +2,6 @@ package es.ulpgc.eite.cleancode.helloworld.bye;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -32,21 +31,9 @@ public class ByeActivity
     goHelloButton = findViewById(R.id.goHelloButton);
     byeMessage = findViewById(R.id.byeMessage);
 
-    sayByeButton.setOnClickListener(new View.OnClickListener() {
+    sayByeButton.setOnClickListener(v -> presenter.sayByeButtonClicked());
 
-      @Override
-      public void onClick(View v) {
-        presenter.sayByeButtonClicked();
-      }
-    });
-
-    goHelloButton.setOnClickListener(new View.OnClickListener() {
-
-      @Override
-      public void onClick(View v) {
-        presenter.goHelloButtonClicked();
-      }
-    });
+    goHelloButton.setOnClickListener(v -> presenter.goHelloButtonClicked());
 
     sayByeButton.setText(getSayByeButtonLabel());
     goHelloButton.setText(getGoHelloButtonLabel());

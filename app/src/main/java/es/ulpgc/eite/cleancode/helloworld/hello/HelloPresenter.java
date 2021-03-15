@@ -74,19 +74,6 @@ public class HelloPresenter implements HelloContract.Presenter {
     mediator.setHelloToByeState(state);
   }
 
-//  private ByeToHelloState getDataFromByeScreen() {
-//    if (mediator != null) {
-//      return mediator.getByeToHelloState();
-//    }
-//
-//    return null;
-//  }
-//
-//  private void passDataToByeScreen(HelloToByeState state) {
-//    if (mediator != null) {
-//      mediator.setHelloToByeState(state);
-//    }
-//  }
 
   @Override
   public void injectView(WeakReference<HelloContract.View> view) {
