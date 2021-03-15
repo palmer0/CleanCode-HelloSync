@@ -81,11 +81,6 @@ public class HelloActivity
   }
 
   @Override
-  public void injectPresenter(HelloContract.Presenter presenter) {
-    this.presenter = presenter;
-  }
-
-  @Override
   public void displayHelloData(HelloViewModel viewModel) {
     Log.e(TAG, "displayHelloData()");
 
@@ -102,4 +97,8 @@ public class HelloActivity
     return getResources().getString(R.string.say_hello_button_label);
   }
 
+  @Override
+  public void injectPresenter(HelloContract.Presenter presenter) {
+    this.presenter = presenter;
+  }
 }

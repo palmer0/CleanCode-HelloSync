@@ -23,25 +23,6 @@ public class ByePresenter implements ByeContract.Presenter {
     state = mediator.getByeState();
   }
 
-  private HelloToByeState getDataFromHelloScreen() {
-    return mediator.getHelloToByeState();
-  }
-
-  private void passDataToHelloScreen(ByeToHelloState state) {
-
-    mediator.setByeToHelloState(state);
-  }
-
-  @Override
-  public void injectView(WeakReference<ByeContract.View> view) {
-    this.view = view;
-  }
-
-  @Override
-  public void injectModel(ByeContract.Model model) {
-    this.model = model;
-  }
-
   @Override
   public void onResumeCalled() {
     Log.e(TAG, "onResumeCalled()");
@@ -82,5 +63,24 @@ public class ByePresenter implements ByeContract.Presenter {
     ByeToHelloState newState = new ByeToHelloState(state.byeMessage);
     passDataToHelloScreen(newState);
     view.get().finishView();
+  }
+
+
+  private HelloToByeState getDataFromHelloScreen() {
+    return mediator.getHelloToByeState();
+  }
+
+  private void passDataToHelloScreen(ByeToHelloState state) {
+    mediator.setByeToHelloState(state);
+  }
+
+  @Override
+  public void injectView(WeakReference<ByeContract.View> view) {
+    this.view = view;
+  }
+
+  @Override
+  public void injectModel(ByeContract.Model model) {
+    this.model = model;
   }
 }
