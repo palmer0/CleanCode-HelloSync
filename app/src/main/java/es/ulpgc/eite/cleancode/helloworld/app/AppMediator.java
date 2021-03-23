@@ -5,8 +5,11 @@ import es.ulpgc.eite.cleancode.helloworld.hello.HelloState;
 
 public class AppMediator {
 
-  private HelloState helloState = new HelloState();
-  private ByeState byeState = new ByeState();
+//  private HelloState helloState = new HelloState();
+//  private ByeState byeState = new ByeState();
+
+  private HelloState helloState;
+  private ByeState byeState;
 
   private HelloToByeState helloToByeState;
   private ByeToHelloState byeToHelloState;
@@ -15,7 +18,8 @@ public class AppMediator {
   private static AppMediator INSTANCE;
 
   private AppMediator() {
-
+    helloState = new HelloState();
+    byeState = new ByeState();
   }
 
   public static void resetInstance() {
